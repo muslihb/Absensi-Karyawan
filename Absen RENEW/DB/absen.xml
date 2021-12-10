@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.0.3
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Waktu pembuatan: 26 Nov 2020 pada 19.47
+- Versi server: 10.4.14-MariaDB
+- Versi PHP: 7.4.11
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="absen" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="jabatan">
+                CREATE TABLE `jabatan` (
+                  `id_jabatan` varchar(15) NOT NULL,
+                  `jabatan` varchar(50) NOT NULL,
+                  PRIMARY KEY (`id_jabatan`),
+                  UNIQUE KEY `jabatan` (`jabatan`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="tbabsen">
+                CREATE TABLE `tbabsen` (
+                  `no` varchar(50) NOT NULL,
+                  `nip` varchar(20) NOT NULL,
+                  `nama_karyawan` varchar(50) NOT NULL,
+                  `tgl_kerja` date NOT NULL,
+                  `jam_masuk` time NOT NULL,
+                  `jam_keluar` time NOT NULL,
+                  `status` varchar(10) NOT NULL,
+                  PRIMARY KEY (`no`),
+                  KEY `nip` (`nip`),
+                  CONSTRAINT `tbabsen_ibfk_1` FOREIGN KEY (`nip`) REFERENCES `tbkaryawan` (`nip`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="tbagama">
+                CREATE TABLE `tbagama` (
+                  `id` varchar(20) NOT NULL,
+                  `agama` varchar(20) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `agama` (`agama`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="tbkaryawan">
+                CREATE TABLE `tbkaryawan` (
+                  `nip` varchar(20) NOT NULL,
+                  `nama_karyawan` varchar(255) NOT NULL,
+                  `jenis_kelamin` varchar(15) NOT NULL,
+                  `tempat_lahir` varchar(50) NOT NULL,
+                  `tgl_lahir` date NOT NULL,
+                  `jabatan` varchar(100) NOT NULL,
+                  `agama` varchar(15) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `no_telfon` varchar(20) NOT NULL,
+                  `alamat` varchar(255) NOT NULL,
+                  `foto` longblob NOT NULL,
+                  PRIMARY KEY (`nip`),
+                  KEY `jabatan` (`jabatan`),
+                  KEY `agama` (`agama`),
+                  CONSTRAINT `tbkaryawan_ibfk_1` FOREIGN KEY (`jabatan`) REFERENCES `jabatan` (`jabatan`),
+                  CONSTRAINT `tbkaryawan_ibfk_2` FOREIGN KEY (`agama`) REFERENCES `tbagama` (`agama`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="tbmaster">
+                CREATE TABLE `tbmaster` (
+                  `username` varchar(255) NOT NULL,
+                  `password` varchar(255) NOT NULL,
+                  `status` varchar(15) NOT NULL,
+                  PRIMARY KEY (`username`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'absen'
+    -->
+    <database name="absen">
+        <!-- Tabel jabatan -->
+        <table name="jabatan">
+            <column name="id_jabatan">JB002</column>
+            <column name="jabatan">Developer</column>
+        </table>
+        <table name="jabatan">
+            <column name="id_jabatan">JB001</column>
+            <column name="jabatan">Manager</column>
+        </table>
+        <!-- Tabel tbabsen -->
+        <table name="tbabsen">
+            <column name="no">24112020015955</column>
+            <column name="nip">280719991210001</column>
+            <column name="nama_karyawan">Muslih</column>
+            <column name="tgl_kerja">2020-11-24</column>
+            <column name="jam_masuk">13:59:55</column>
+            <column name="jam_keluar">14:59:12</column>
+            <column name="status">Pulang</column>
+        </table>
+        <table name="tbabsen">
+            <column name="no">25112020024037</column>
+            <column name="nip">280719991210001</column>
+            <column name="nama_karyawan">Muslih</column>
+            <column name="tgl_kerja">2020-11-25</column>
+            <column name="jam_masuk">14:40:37</column>
+            <column name="jam_keluar">14:59:12</column>
+            <column name="status">Pulang</column>
+        </table>
+        <table name="tbabsen">
+            <column name="no">25112020030436</column>
+            <column name="nip">280719991210002</column>
+            <column name="nama_karyawan">ibad</column>
+            <column name="tgl_kerja">2020-11-25</column>
+            <column name="jam_masuk">00:00:00</column>
+            <column name="jam_keluar">00:00:00</column>
+            <column name="status">Ijin</column>
+        </table>
+        <!-- Tabel tbagama -->
+        <table name="tbagama">
+            <column name="id">A0005</column>
+            <column name="agama">Budha </column>
+        </table>
+        <table name="tbagama">
+            <column name="id">A0004</column>
+            <column name="agama">Hindu</column>
+        </table>
+        <table name="tbagama">
+            <column name="id">A0001</column>
+            <column name="agama">Islam</column>
+        </table>
+        <table name="tbagama">
+            <column name="id">A0003</column>
+            <column name="agama">Katolik</column>
+        </table>
+        <table name="tbagama">
+            <column name="id">A0006</column>
+            <column name="agama">Konghucu</column>
+        </table>
+        <table name="tbagama">
+            <column name="id">A0002</column>
+            <column name="agama">Protestan</column>
+        </table>
+        <!-- Tabel tbkaryawan -->
+        <table name="tbkaryawan">
+            <column name="nip">280719991210001</column>
+            <column name="nama_karyawan">Muslih</column>
+            <column name="jenis_kelamin">Laki - Laki</column>
+            <column name="tempat_lahir">Bekasi</column>
+            <column name="tgl_lahir">1999-07-28</column>
+            <column name="jabatan">Developer</column>
+            <column name="agama">Islam</column>
+            <column name="email">muslihb15@gmail.com</column>
+            <column name="no_telfon">081387009307</column>
+            <column name="alamat">PTI</column>
+            <column name="foto"></column>
+        </table>
+        <table name="tbkaryawan">
+            <column name="nip">280719991210002</column>
+            <column name="nama_karyawan">ibad</column>
+            <column name="jenis_kelamin">Laki - Laki</column>
+            <column name="tempat_lahir">Kebumen</column>
+            <column name="tgl_lahir">1999-07-28</column>
+            <column name="jabatan">Developer</column>
+            <column name="agama">Islam</column>
+            <column name="email">muslihb33@gmail.com</column>
+            <column name="no_telfon">0816515784</column>
+            <column name="alamat">PTI2</column>
+            <column name="foto"></column>
+        </table>
+        <!-- Tabel tbmaster -->
+        <table name="tbmaster">
+            <column name="username">admin</column>
+            <column name="password">admin</column>
+            <column name="status">Admin</column>
+        </table>
+        <table name="tbmaster">
+            <column name="username">user</column>
+            <column name="password">user</column>
+            <column name="status">Users</column>
+        </table>
+    </database>
+</pma_xml_export>

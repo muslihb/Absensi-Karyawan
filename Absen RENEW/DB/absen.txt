@@ -1,0 +1,77 @@
+===Basis data absen
+
+== Struktur dari tabel jabatan
+
+|------
+|Kolom|Jenis|Tak Ternilai|Bawaan
+|------
+|//**id_jabatan**//|varchar(15)|Tidak|
+|**jabatan**|varchar(50)|Tidak|
+== Dumping data untuk tabel jabatan
+
+|JB002|Developer
+|JB001|Manager
+== Struktur dari tabel tbabsen
+
+|------
+|Kolom|Jenis|Tak Ternilai|Bawaan
+|------
+|//**no**//|varchar(50)|Tidak|
+|nip|varchar(20)|Tidak|
+|nama_karyawan|varchar(50)|Tidak|
+|tgl_kerja|date|Tidak|
+|jam_masuk|time|Tidak|
+|jam_keluar|time|Tidak|
+|status|varchar(10)|Tidak|
+== Dumping data untuk tabel tbabsen
+
+|24112020015955|280719991210001|Muslih|2020-11-24|13:59:55|14:59:12|Pulang
+|25112020024037|280719991210001|Muslih|2020-11-25|14:40:37|14:59:12|Pulang
+|25112020030436|280719991210002|ibad|2020-11-25|00:00:00|00:00:00|Ijin
+== Struktur dari tabel tbagama
+
+|------
+|Kolom|Jenis|Tak Ternilai|Bawaan
+|------
+|//**id**//|varchar(20)|Tidak|
+|**agama**|varchar(20)|Tidak|
+== Dumping data untuk tabel tbagama
+
+|A0005|Budha 
+|A0004|Hindu
+|A0001|Islam
+|A0003|Katolik
+|A0006|Konghucu
+|A0002|Protestan
+== Struktur dari tabel tbkaryawan
+
+|------
+|Kolom|Jenis|Tak Ternilai|Bawaan
+|------
+|//**nip**//|varchar(20)|Tidak|
+|nama_karyawan|varchar(255)|Tidak|
+|jenis_kelamin|varchar(15)|Tidak|
+|tempat_lahir|varchar(50)|Tidak|
+|tgl_lahir|date|Tidak|
+|jabatan|varchar(100)|Tidak|
+|agama|varchar(15)|Tidak|
+|email|varchar(255)|Tidak|
+|no_telfon|varchar(20)|Tidak|
+|alamat|varchar(255)|Tidak|
+|foto|longblob|Tidak|
+== Dumping data untuk tabel tbkaryawan
+
+|280719991210001|Muslih|Laki - Laki|Bekasi|1999-07-28|Developer|Islam|muslihb15@gmail.com|081387009307|PTI|
+|280719991210002|ibad|Laki - Laki|Kebumen|1999-07-28|Developer|Islam|muslihb33@gmail.com|0816515784|PTI2|
+== Struktur dari tabel tbmaster
+
+|------
+|Kolom|Jenis|Tak Ternilai|Bawaan
+|------
+|//**username**//|varchar(255)|Tidak|
+|password|varchar(255)|Tidak|
+|status|varchar(15)|Tidak|
+== Dumping data untuk tabel tbmaster
+
+|admin|admin|Admin
+|user|user|Users

@@ -1,0 +1,24 @@
+id_jabatan;jabatan;;;;;;;;;
+JB002;Developer;;;;;;;;;
+JB001;Manager;;;;;;;;;
+no;nip;nama_karyawan;tgl_kerja;jam_masuk;jam_keluar;status;;;;
+2,4112E+13;2,8072E+14;Muslih;24/11/2020;13:59:55;14:59:12;Pulang;;;;
+2,5112E+13;2,8072E+14;Muslih;25/11/2020;14:40:37;14:59:12;Pulang;;;;
+2,5112E+13;2,8072E+14;ibad;25/11/2020;00:00:00;00:00:00;Ijin;;;;
+id;agama;;;;;;;;;
+A0005;Budha ;;;;;;;;;
+A0004;Hindu;;;;;;;;;
+A0001;Islam;;;;;;;;;
+A0003;Katolik;;;;;;;;;
+A0006;Konghucu;;;;;;;;;
+A0002;Protestan;;;;;;;;;
+nip;nama_karyawan;jenis_kelamin;tempat_lahir;tgl_lahir;jabatan;agama;email;no_telfon;alamat;foto
+<br />;;;;;;;;;;
+<b>Fatal error</b>:  Uncaught TypeError: Return value of PhpMyAdmin\Encoding::convertString() must be of the type string, bool returned in C:\xampp\phpMyAdmin\libraries\classes\Encoding.php:200;;;;;;;;;;
+Stack trace:;;;;;;;;;;
+#0 C:\xampp\phpMyAdmin\libraries\classes\Export.php(154): PhpMyAdmin\Encoding::convertString('utf-8', 'windows-1252', '&quot;28071999121000...');;;;;;;;;
+#1 C:\xampp\phpMyAdmin\libraries\classes\Plugins\Export\ExportCsv.php(339): PhpMyAdmin\Export-&gt;outputHandler('&quot;28071999121000...');;;;;;;;
+#2 C:\xampp\phpMyAdmin\libraries\classes\Export.php(771): PhpMyAdmin\Plugins\Export\ExportCsv-&gt;exportData('absen', 'tbkaryawan', '\r\n', 'db_export.php?d...', 'SELECT `nip`, `...', Array);;;;;;;;;
+#3 C:\xampp\phpMyAdmin\export.php(526): PhpMyAdmin\Export-&gt;exportDatabase('absen', Array, 'data', Array, Array, Object(PhpMyAdmin\Plugins\Export\ExportExcel), '\r\n', 'db_export.php?d...', 'database', false, false, false, false, Array, '');;;;;;;;;
+#4 {main};;;;;;;;;;
+  thrown in <b>C:\xampp\phpMyAdmin\libraries\classes\Encoding.php</b> on line <b>200</b><br />;;;;;;;;;;
